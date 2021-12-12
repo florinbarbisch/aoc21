@@ -1,5 +1,3 @@
-import re
-
 with open("input.txt", "r") as file:
     numbers = list(map(int, file.readline().split(",")))
     boards = []
@@ -8,7 +6,7 @@ with open("input.txt", "r") as file:
         board = []
         for i in range(5):
             line = file.readline()
-            board.append(list(map(int, re.split("\\s+", line.strip()))))
+            board.append(list(map(int, filter(lambda x: len(x) > 0, line.strip().split(" ")))))
         boards.append(board)
         line = file.readline()
 
