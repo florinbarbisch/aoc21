@@ -1,0 +1,1 @@
+print(sum([len(list(filter(lambda x: len(x) in (2,4,3,7), line.rstrip().split(" | ")[1].split(" ")))) for line in open("input.txt", "r")]))
